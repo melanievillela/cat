@@ -25,20 +25,17 @@ const catList = [catOne, catTwo, catThree, catFour, catFive];
   //Make cat names clickable
   for (let j = 0; j < catList.length; j++) {
     let names = document.querySelectorAll("li");
-    names[j].addEventListener("click", function() {
-      console.log(names[j].innerText);
-      return names[j];
-      containerCreate();
-    })
+    names[j].addEventListener("click", containerCreate);
   }
 })();
 
 //Create display for cats
 function containerCreate() {
-  const info = document.querySelector(".info");
-  const h1 = document.createElement("h1");
-  info.append(h1);
-  h1.innerText = names[j].innerText;
+  const h1 = document.querySelector(".name");
+  h1.innerText = this.innerText;
+  const img = document.createElement("img");
+  console.log(this);
+  //img.setAttribute("src", this.);
 }
 
 /*
@@ -54,5 +51,5 @@ for (let j = 0; j < cats.length; j++) {
     k++;
     clicks[j].innerText = k;
   })
-}
+})
 */
