@@ -1,3 +1,7 @@
+const img = document.querySelector(".images")
+let count = 0;
+const counter = document.querySelector(".counter");
+
 //Cat object
 function Cat(name, image) {
   this.name = name;
@@ -17,9 +21,9 @@ const catList = [catOne, catTwo, catThree, catFour, catFive];
 (function makeClickable() {
   for (let i = 0; i < catList.length; i++) {
     let li = document.createElement("li");
-    let name = catList[i].name;
+    let catName = catList[i].name;
     const ul = document.querySelector(".names");
-    li.innerText = name;
+    li.innerText = catName;
     ul.append(li);
   }
   //Make cat names clickable
@@ -31,25 +35,24 @@ const catList = [catOne, catTwo, catThree, catFour, catFive];
 
 //Create display for cats
 function containerCreate() {
+  //Add cat name to DOM
   const h1 = document.querySelector(".name");
   h1.innerText = this.innerText;
-  const img = document.createElement("img");
-  console.log(this);
-  //img.setAttribute("src", this.);
+  //Add cat image to DOM
+  for (let k = 0; k < catList.length; k++) {
+    if (this.innerText === catList[k].name) {
+      img.setAttribute("src", catList[k].image + ".jpg");
+      counter.innerText = "";
+      clicks();
+    }
+  }
 }
 
-/*
-//Add names into h2 fields from names
-for (let i = 0; i < cats.length; i++) {
-  name[i].innerText = names[i];
-}
-
-//Add event listener and increment counter for each cat clicked
-for (let j = 0; j < cats.length; j++) {
-  let k = 0;
-  cats[j].addEventListener("click", function() {
-    k++;
-    clicks[j].innerText = k;
+//Event listener on cat images to display clicks
+function clicks() {
+  count = 0;
+  img.addEventListener("click", function() {
+    count++;
+    counter.innerText = count;
   })
-})
-*/
+}

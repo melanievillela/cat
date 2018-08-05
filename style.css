@@ -12,35 +12,43 @@ body {
 .container:first-child {
   flex-grow: 1;
   justify-content: flex-start;
-  align-items: flex-start;
+  padding-top: 50px;
+}
+
+.counter {
+  height: 50px;
 }
 
 div {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.images {
-  padding: 25px;
+h1 {
+  margin: 25px;
+}
+
+h1, h2 {
+  width: 100%;
+  text-align: center;
 }
 
 img {
   width: 500px;
   height: auto;
-  box-shadow: 5px 5px 5px black;
+  padding: 25px;
 }
 
 .info {
   flex-direction: column;
   width: 202px;
-  margin: 50px;
   padding: 10px;
   font-size: 2em;
 }
 
 li {
   padding: 15px;
+  cursor: pointer;
 }
 
 .main {
@@ -50,7 +58,6 @@ li {
 ul {
   list-style-type: none;
 }
-
 
 p {
   margin: 5px;
